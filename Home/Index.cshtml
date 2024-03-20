@@ -1,0 +1,86 @@
+﻿@model IEnumerable<MVCCURD.Employee>
+
+@{
+
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Index</h2>
+
+<p>
+
+    @Html.ActionLink("Create New", "Create")
+
+</p>
+
+<table class="table justify-content-center table-striped ">
+
+    <tr class="bg-primary text-white rounded-2">
+
+        <th class="text-white" >
+
+            @Html.DisplayNameFor(model => model.empid)
+
+        </th>
+
+        <th class="text-white">
+
+            @Html.DisplayNameFor(model => model.empname)
+
+        </th>
+         
+        <th class="text-white">
+
+            @Html.DisplayNameFor(model => model.salaray)
+
+        </th>
+
+        <th class="text-white">
+            @Html.DisplayName("CurdOperation")
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+
+    <tr>
+
+        <td>
+
+            @Html.DisplayFor(modelItem => item.empid)
+
+        </td>
+
+        <td>
+
+            @Html.DisplayFor(modelItem => item.empname)
+
+        </td>
+
+        <td>
+
+            @Html.DisplayFor(modelItem => item.salaray)
+
+        </td>
+
+        <td >
+            <div class="row">
+                <div class="col-md-2 bg-success text-decoration-none text-center  rounded-1">
+                    @Html.ActionLink("Edit", "Edit", new { @class = "text-white", id = item.empid })
+                </div>|
+                <div class="col-md-2 bg-light text-decoration-none text-center  rounded-1">
+                    @Html.ActionLink("Detail", "Detail", new { id = item.empid })
+                </div>|
+                <div class="col-md-2 bg-danger text-decoration-none text-center   rounded-1">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.empid }) 
+                </div>|
+            </div>
+
+</td>
+
+    </tr>
+
+}
+
+</table>

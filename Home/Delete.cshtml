@@ -1,0 +1,34 @@
+﻿
+@model MVCCURD.Employee
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3 class="text-danger text-capitalize fs-3">Delete Successfully</h3>
+<div>
+    <h4>Student Delete Dtail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.empname)
+        </dt>
+        <dd class=" col-md-6 fs-4 fw-bolder text-bg-warning ">
+             @Html.DisplayFor(model => model.empname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.salaray)
+        </dt>
+        <dd class=" col-md-6  fs-4 fw-bolder text-bg-warning">
+            @Html.DisplayFor(model => model.salaray)
+        </dd>
+       
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions  ">
+          
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

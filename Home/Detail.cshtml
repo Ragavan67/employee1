@@ -1,0 +1,61 @@
+﻿
+@model MVCCURD.Employee
+
+@{
+
+    ViewBag.Title = "Detail";
+
+}
+
+<h2>Detail</h2>
+
+<div>
+
+    <h4>Student</h4>
+
+    <hr />
+
+    <dl class="dl-horizontal">
+
+        <dt>
+
+            @Html.DisplayNameFor(model => model.empname)
+
+        </dt>
+
+        <dd class=" col-md-6 fs-4 fw-bolder text-bg-warning px-4">
+
+            @Html.DisplayFor(model => model.empname)
+
+        </dd>
+
+        <dt>
+
+            @Html.DisplayNameFor(model => model.salaray)
+
+        </dt>
+
+        <dd class=" col-md-6 fs-4 fw-bolder text-bg-warning px-4">
+
+            @Html.DisplayFor(model => model.salaray)
+
+        </dd>
+
+      
+
+    </dl>
+
+</div>
+
+<p>
+ 
+       
+            @Html.ActionLink("Edit", "Edit", new {@class= "text-decoration-none", id = Model.empid })
+       
+
+        @Html.ActionLink("Back to List", "Index")
+   
+    
+
+</p>
+
